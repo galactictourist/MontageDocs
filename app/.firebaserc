@@ -1,0 +1,34 @@
+{
+  "projects": {
+    "default": "montage-53a4a",
+    "prod": "prod-montage"
+  },
+  "targets": {
+    "prod-montage": {
+      "hosting": {
+        "prod": [
+          "prod-montage"
+        ]
+      }
+    },
+    "montage-53a4a": {
+      "hosting": {
+        "main": [
+          "montage-53a4a"
+        ]
+      }
+    }
+  },
+  "etags": {
+    "montage-53a4a": {
+      "extensionInstances": {
+        "moralis-streams": "5e1f0050e1e79ff3bddd65b0cd2243eb4bb5aeff7dc5ab9a5f161aea66849bdc"
+      }
+    },
+    "prod-montage": {
+      "extensionInstances": {
+        "moralis-streams-prod": "4538a65e6f87a19e286b2189af6411e205fc191817641591c0fc2d410e2ca1a4"
+      }
+    }
+  }
+}

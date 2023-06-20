@@ -1,0 +1,153 @@
+@import '../css/_basic';
+
+.collection-item {
+	max-width: $pageWidth;
+}
+
+.collection-item-inner {
+	max-width: $pageWidthInner;
+	margin-top: 48px;
+	margin-bottom: 48px;
+
+	@media (max-width: $mobile) {
+		margin-top: 16px;
+		margin-bottom: 32px;
+	}
+}
+
+.collection-item--file {
+
+	&:not(.keep-aspect-ratio) {
+		width: $cardWidth508;
+	}
+
+	@media (min-width: $desktop) {
+		&.keep-aspect-ratio {
+			margin-left: auto;
+			display: block;
+		}
+
+		max-width: 45vw;
+	}
+
+	@media (max-width: $mobile) {
+		max-width: calc(100vw - 32px);
+	}
+
+	border-radius: $itemFileBorderRadius;
+}
+
+.collection-item-details {
+
+	@media (min-width: $desktop) {
+		display: flex;
+		column-gap: 96px;
+
+		&>div {
+			flex: 1;
+		}
+	}
+
+	@media (max-width: $mobile) {
+		padding: 0 16px;
+	}
+}
+
+.collection-item-names {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 2;
+}
+
+.collection-item--desc {
+	font-size: 12px;
+	line-height: 1.5;
+	font-weight: 500;
+	margin-top: 32px;
+	white-space: pre-wrap;
+
+	&:empty {
+		display: none;
+	}
+}
+
+.mint-btn-ct {
+	margin-top: 64px;
+
+	@media (max-width: $mobile) {
+		margin-top: 16px;
+	}
+}
+
+.collection-item--profile-image {
+	display: block;
+	width: 36px;
+	height: 36px;
+	border-radius: $profileImageBorderRadius;
+}
+
+.collection-item-price {
+	font-size: 24px;
+	line-height: 2;
+}
+
+.collection-item-price-small {
+	font-size: 16px;
+	line-height: 2;
+}
+
+.my-own-mode {
+	.collection-item-price-small {
+		color: $footerLink;
+
+		[class^=icon-],
+		[class*=" icon-"] {
+			color: $footerLink;
+		}
+	}
+
+	[class^=icon-],
+	[class*=" icon-"] {
+		color: #ffffff;
+
+		&:not(.non-clickable) {
+			&:hover {
+				color: $hoverMSolid;
+			}
+
+			&:active {
+				color: $focusM;
+			}
+		}
+	}
+}
+
+.collection-item--info {
+	display: flex;
+
+}
+
+.collection-item--data-point-table {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+	padding: 2em 0;
+}
+
+.collection-item--data-point {
+	display: flex;
+
+	&>* {
+		min-width: 150px;
+		flex: 1;
+	}
+
+	&>span {
+		text-align: right;
+		font-weight: 700;
+
+		&.normal {
+			font-weight: 400;
+		}
+	}
+}

@@ -1,0 +1,214 @@
+@import '../../css/_basic';
+
+.has-status-overlay {
+	position: relative;
+
+	.collection-item-sold-overlay::after {
+		content: 'Sold';
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 64px;
+		font-weight: 700;
+		line-height: 2.5;
+		letter-spacing: 10%;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: rgba(255, 255, 255, 0.5);
+		width: 100%;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.cards-fluid-grid {
+	$gap: 64px;
+	padding: 4rem 0;
+	margin: 0 auto;
+	display: grid;
+	grid-gap: $gap;
+	max-width: calc($cardWidth);
+
+	&:not(.single-card):not(.two-card):not(.two-big-cards) {
+
+		// grid-template-columns: repeat(auto-fit, minmax($cardWidth, 1fr));
+		@media (min-width: #{2*$cardWidth + 3*$gap}) {
+			grid-template-columns: repeat(2, 1fr);
+			max-width: calc($cardWidth * 2 + $gap);
+		}
+
+		@media (min-width: #{3*$cardWidth + 4*$gap}) {
+			grid-template-columns: repeat(3, 1fr);
+			max-width: calc($cardWidth * 3 + $gap * 2);
+		}
+	}
+
+	&.single-card {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	&.two-card {
+		@media (min-width: #{2*$cardWidth + 3*$gap}) {
+			grid-template-columns: repeat(2, 1fr);
+			max-width: calc($cardWidth * 2 + $gap);
+		}
+	}
+
+	&.two-big-cards {
+		$break: $cardWidth508 * 2+$gap;
+
+		@media (min-width: $break) {
+			grid-template-columns: repeat(2, 1fr);
+			max-width: calc($break);
+		}
+
+		@media (max-width: ($break - 1)) {
+			grid-gap: calc($gap / 2);
+		}
+
+		.card {
+			@media (min-width: $break) {
+				width: $cardWidth508;
+			}
+
+			@media (max-width: $cardWidth) {
+				max-width: calc(100vw - 16px);
+			}
+
+			border-width: 1px;
+			padding: 0;
+			// TODO [specific to ArtIs] generalize colors for my own mode and dark mode
+			background-color: #000000;
+			color: $footerLink;
+			border-color: $footerLink;
+
+			@media (min-width: $break) {
+				.card-img-ct {
+					height: $cardWidth508;
+				}
+			}
+
+			@media (max-width: ($break - 1)) {
+				.card-img-ct {
+					padding-bottom: 0;
+					height: auto;
+				}
+			}
+
+			.card-main-title {
+				// TODO [specific to ArtIs] generalize colors for my own mode and dark mode
+				color: $footerLink;
+			}
+
+			.card-footer {
+				padding: 12px 16px;
+			}
+		}
+	}
+}
+
+.by-creator {
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 2;
+}
+
+.card-img-ct {
+	padding-bottom: 6px;
+	display: flex;
+	justify-content: center;
+	height: 254px;
+}
+
+.card-img {
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: $borderRadius;
+	margin: auto;
+	display: block;
+}
+
+.card-footer {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	row-gap: 8px;
+}
+
+.card-footer-main-line {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: 8px;
+
+	.card-img {
+		border-radius: 50%;
+		width: 34px;
+		height: 34px;
+		margin-right: 16px;
+	}
+}
+
+.card-footer-sub-line-column {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding-top: 12px;
+
+	&>.card-footer-sub-line:last-child {
+		margin-top: auto;
+		padding-top: 12px;
+	}
+}
+
+.card-footer-sub-line {
+	min-height: 30px;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 24px;
+	color: $footerLink;
+	display: flex;
+	align-items: center;
+
+	&.has-social-icons {
+		justify-content: start;
+		column-gap: 8px;
+
+		&>* {
+			display: inline-flex;
+		}
+	}
+}
+
+.card-main-title {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 2;
+	color: black;
+	flex: 1;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+
+.open-menu-button {
+	font-size: 24px;
+	margin-right: .5em;
+	display: inline-flex;
+}
+
+.fav-toggle-button {
+	color: $footerLinkDisabled;
+	margin-right: -6px;
+
+	&:hover {
+		color: $hoverM;
+	}
+
+	&.selected {
+		color: $focusM;
+	}
+}

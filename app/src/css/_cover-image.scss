@@ -1,0 +1,13 @@
+@import './basic.scss';
+
+.cover-image {
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 350px;
+
+	@media (max-width: $mobile) {
+		height: 116px;
+		background-size: cover;
+	}
+}

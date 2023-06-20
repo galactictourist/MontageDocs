@@ -1,0 +1,58 @@
+@import '../../css/_basic.scss';
+
+.timer-label {
+	font-size: 16px;
+}
+
+.timer-parts-ct {
+	display: flex;
+	justify-content: space-between;
+
+	&.x-small {
+		.timer-part {
+			font-size: 24px;
+			min-width: 24px;
+
+			.timer-part--num {
+				min-width: 38px;
+			}
+
+			.timer-part--postfix {
+				font-size: 18px;
+			}
+		}
+	}
+
+	&.xx-small {
+		.timer-part {
+			font-size: 16px;
+			min-width: 16px;
+
+			.timer-part--num {
+				min-width: 24px;
+			}
+
+			.timer-part--postfix {
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+.timer-part {
+	font-size: 36px;
+	line-height: 1.333;
+	font-weight: 400;
+	min-width: 82px;
+	display: flex;
+	align-items: baseline;
+
+	.timer-part--num {
+		min-width: 48px;
+		text-align: end;
+	}
+
+	.timer-part--postfix {
+		font-size: 24px;
+	}
+}

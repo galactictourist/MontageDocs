@@ -1,0 +1,77 @@
+$cardWidth: 280px;
+$cardWidth360: 360px;
+$cardWidth508: 508px;
+
+$desktop: 960px;
+$mobile: $desktop - 1;
+$topBarHeight: 84px;
+$pageWidth: 1440px;
+$pageWidthInner: $pageWidth - 130*2;
+$tabSidebarWidth: 220px;
+$formContainerWidth: 360px;
+
+$profileImageBorderRadius: 4px;
+$borderRadius: 8px;
+$itemFileBorderRadius: 16px;
+$fieldBorderRadius: 24px;
+
+$appleBlue: #306FDC;
+$blueOfActiveIcon: #10A4FE;
+
+$waitingColor: #FFA6A6;
+// $hoverM: #FF47AF;
+$hoverMSolid: #FF47AF;
+$hoverM: linear-gradient(90deg, #FF8080 -0.02%, $hoverMSolid 100.02%);
+$focusM: #BE24B8;
+$focusM-left: #7A52F4;
+$chosenM: linear-gradient(90deg, #EB2C9C -0.02%, $focusM-left 100.02%);
+
+$verticalGradient: linear-gradient(0.01deg, #FFA6A6 0%, #DB02E9 15.1%, #AF0AEB 30.73%, #730DF2 45.83%, #0C0BE5 61.98%, #10A4FE 80.73%, #00BEE4 100%);
+
+$activeM: #333333;
+$footerLink: #5D5D5B;
+$footerLinkDisabled: rgba(93, 93, 91, .5);
+
+$fieldBorderColor: rgba(207, 219, 213, 0.6);
+
+$splitterColor: #EDEEF9;
+
+$disabledM: #CAC7D4;
+
+$activeIconButtonM: #7D7D7D;
+
+$noM: #FF47AF;
+$yesM: #00BD9B;
+$waitingM: #FF7A00;
+
+//CFDBD5
+$roundIconButtonColor: rgba(207, 219, 213, .6);
+$disabledIconM: #D7D7D6;
+$lightGraybgM: #FBFCFE;
+$altLightGraybgM: #F5F8F8;
+
+$darkModeBgM: #777b7e;
+$altDarkModeBgM: #181a18;
+
+$separatorColor: #E2E9E6;
+
+$donation: #00C24E;
+
+@mixin fieldBorder() {
+	&::placeholder {
+		color: #5D5D5B;
+		font-weight: 400;
+	}
+
+	&:hover {
+		border-color: $hoverMSolid;
+	}
+
+	&:focus {
+		outline: 1px solid $focusM;
+
+		&::placeholder {
+			color: black;
+		}
+	}
+}

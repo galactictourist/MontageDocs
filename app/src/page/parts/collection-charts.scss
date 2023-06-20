@@ -1,0 +1,13 @@
+.charts-ct {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	column-gap: 64px;
+	row-gap: 64px;
+	margin: 64px;
+}
+
+.chart-ct {
+	width: 600px;
+	height: 400px;
+}

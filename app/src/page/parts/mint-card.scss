@@ -1,0 +1,29 @@
+@import '../../css/_basic';
+
+.mint-card {
+	row-gap: 24px;
+
+	.mint-progress {
+		display: flex;
+		flex-direction: column;
+
+		.total-minted-counter {
+			font-size: 24px;
+			line-height: 48px;
+		}
+
+		.total-minted-phrase {
+			margin-left: .5em;
+		}
+	}
+
+	.total-line {
+		display: flex;
+		justify-content: space-between;
+		line-height: 48px;
+
+		.total-line--price {
+			font-size: 24px;
+		}
+	}
+}

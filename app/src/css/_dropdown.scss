@@ -1,0 +1,15 @@
+@import './_basic.scss';
+
+.app-dropdown {
+	.app-dropdown-item {
+		cursor: pointer;
+		font-size: 16px;
+		padding: 4px 8px;
+		border-radius: $borderRadius;
+
+		&:hover {
+			background-color: white;
+			color: $activeM;
+		}
+	}
+}

@@ -1,0 +1,34 @@
+@import '../css/_basic.scss';
+
+.amounts-view {
+	display: grid;
+	max-width: 750px;
+	grid-template-columns: repeat(3, 1fr);
+
+	&.x2 {
+		max-width: 500px;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	&.x1 {
+		max-width: 250px;
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	@media (max-width: $mobile) {
+		display: block;
+		max-width: 250px;
+		margin: auto;
+	}
+}
+
+.my-balance-page {
+	background-color: white;
+}
+
+.my-own-mode {
+	.my-balance-page {
+		background-color: var(--my-own-bg-color);
+		color: var(--my-own-text-color);
+	}
+}

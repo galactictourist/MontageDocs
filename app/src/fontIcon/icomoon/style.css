@@ -1,0 +1,231 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?8bp84w');
+  src:  url('fonts/icomoon.eot?8bp84w#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?8bp84w') format('truetype'),
+    url('fonts/icomoon.woff?8bp84w') format('woff'),
+    url('fonts/icomoon.svg?8bp84w#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wallet:before {
+  content: "\e92b";
+}
+.icon-wallet-connected:before {
+  content: "\e92c";
+}
+.icon-cart-full:before {
+  content: "\e943";
+}
+.icon-graph:before {
+  content: "\e942";
+}
+.icon-post:before {
+  content: "\e93d";
+}
+.icon-video:before {
+  content: "\e93e";
+}
+.icon-image:before {
+  content: "\e93f";
+}
+.icon-center-align:before {
+  content: "\e940";
+}
+.icon-left-align:before {
+  content: "\e941";
+}
+.icon-crop:before {
+  content: "\e93c";
+}
+.icon-doubts:before {
+  content: "\e93b";
+}
+.icon-play:before {
+  content: "\e93a";
+}
+.icon-mint:before {
+  content: "\e939";
+}
+.icon-cancel-circle-full:before {
+  content: "\e938";
+}
+.icon-user2:before {
+  content: "\e937";
+}
+.icon-store:before {
+  content: "\e936";
+}
+.icon-listing:before {
+  content: "\e933";
+}
+.icon-transfer:before {
+  content: "\e934";
+}
+.icon-offer:before {
+  content: "\e935";
+}
+.icon-down-arrow:before {
+  content: "\e932";
+}
+.icon-refresh:before {
+  content: "\e931";
+}
+.icon-cancel-circle:before {
+  content: "\e930";
+}
+.icon-search:before {
+  content: "\e92d";
+}
+.icon-plus-outline:before {
+  content: "\e927";
+}
+.icon-minus-outline:before {
+  content: "\e929";
+}
+.icon-account-full:before {
+  content: "\e901";
+}
+.icon-account-circle:before {
+  content: "\e902";
+}
+.icon-activity:before {
+  content: "\e903";
+}
+.icon-plus:before {
+  content: "\e904";
+}
+.icon-plus-full:before {
+  content: "\e905";
+}
+.icon-arrow-back:before {
+  content: "\e906";
+}
+.icon-calendar:before {
+  content: "\e907";
+}
+.icon-cart:before {
+  content: "\e908";
+}
+.icon-collection-status:before {
+  content: "\e909";
+}
+.icon-collections:before {
+  content: "\e90a";
+}
+.icon-community:before {
+  content: "\e90b";
+}
+.icon-creator:before {
+  content: "\e90c";
+}
+.icon-crypto-wallet:before {
+  content: "\e90d";
+}
+.icon-dark-mode:before {
+  content: "\e90e";
+}
+.icon-delete:before {
+  content: "\e90f";
+}
+.icon-discord:before {
+  content: "\e910";
+}
+.icon-dollar:before {
+  content: "\e911";
+}
+.icon-eth:before {
+  content: "\e912";
+}
+.icon-facebook:before {
+  content: "\e913";
+}
+.icon-filter:before {
+  content: "\e914";
+}
+.icon-google:before {
+  content: "\e915";
+}
+.icon-heart:before {
+  content: "\e916";
+}
+.icon-instagram:before {
+  content: "\e917";
+}
+.icon-invitation:before {
+  content: "\e918";
+}
+.icon-linkedin:before {
+  content: "\e919";
+}
+.icon-logout:before {
+  content: "\e91a";
+}
+.icon-montage:before {
+  content: "\e91b";
+}
+.icon-menu:before {
+  content: "\e91c";
+}
+.icon-menu-x:before {
+  content: "\e91d";
+}
+.icon-nft:before {
+  content: "\e91e";
+}
+.icon-notifcations:before {
+  content: "\e91f";
+}
+.icon-openlink:before {
+  content: "\e920";
+}
+.icon-options:before {
+  content: "\e921";
+}
+.icon-permissions:before {
+  content: "\e922";
+}
+.icon-pie:before {
+  content: "\e923";
+}
+.icon-profile-menu:before {
+  content: "\e924";
+}
+.icon-story:before {
+  content: "\e925";
+}
+.icon-team:before {
+  content: "\e926";
+}
+.icon-tiktok:before {
+  content: "\e928";
+}
+.icon-upload-cloud:before {
+  content: "\e92a";
+}
+.icon-wallet-user:before {
+  content: "\e92e";
+}
+.icon-youtube:before {
+  content: "\e92f";
+}
+.icon-twitter:before {
+  content: "\e900";
+}

@@ -1,0 +1,268 @@
+@import './_basic';
+
+.my-own-mode {
+	.table-row {
+		&:not(.header-row):not(.footer-row) {
+			background-color: var(--my-own-bg-color);
+			color: var(--my-own-text-color);
+		}
+
+		&.header-row {
+			&>span {
+				color: var(--my-own-text-color);
+				opacity: .8;
+			}
+		}
+	}
+}
+
+.table-row {
+	width: 80vw;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+	box-sizing: border-box;
+	margin-bottom: 8px;
+
+	display: grid;
+
+	&.c4 {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	&.c4-2fr {
+		grid-template-columns: 2fr 1fr 1fr 1fr;
+	}
+
+	&.c5 {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	&.c5-2fr {
+		grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+	}
+
+	&.c6 {
+		grid-template-columns: repeat(6, 1fr);
+	}
+
+	&.c6-2fr {
+		grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	&.c6-2fr-24 {
+		grid-template-columns: 2fr 1fr 1fr 1fr 1fr 24px;
+	}
+
+	&.c7 {
+		grid-template-columns: repeat(7, 1fr);
+	}
+
+	&.c7-2fr {
+		grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	&.c7-3fr {
+		grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	&.c7-2fr-24 {
+		grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 24px;
+	}
+
+	grid-template-rows: 1fr;
+	grid-column-gap: 8px;
+
+	&:not(.header-row):not(.footer-row):not(.non-clickable) {
+		cursor: pointer;
+
+		&:hover {
+			border-color: $hoverMSolid;
+			filter: drop-shadow(0px 63px 25px rgba(0, 0, 0, 0.01)) drop-shadow(0px 35px 21px rgba(0, 0, 0, 0.05)) drop-shadow(0px 16px 16px rgba(0, 0, 0, 0.09)) drop-shadow(0px 4px 9px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+		}
+	}
+
+	&:not(.header-row):not(.footer-row) {
+		border-radius: $borderRadius;
+		background-color: white;
+		border: 1px solid $fieldBorderColor;
+		filter: drop-shadow(0px 11px 5px rgba(0, 0, 0, 0.01)) drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.05)) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.09)) drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+	}
+
+	&.row-details-open {
+		&>span {
+			max-height: 48px;
+
+			&.contains-row-details {
+				max-height: none;
+			}
+		}
+
+		.toggle-row-details-arrow {
+			transform: rotate(180deg);
+		}
+	}
+
+	.toggle-row-details-arrow {
+		transition: transform 200ms;
+	}
+
+	&>span {
+		display: flex;
+		align-items: center;
+		column-gap: 12px;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 24px;
+		margin-top: 16px;
+		margin-bottom: 16px;
+		white-space: nowrap;
+		overflow: hidden;
+
+		&.sm {
+			font-weight: 400;
+			font-size: 14px;
+		}
+
+		&.smm {
+			font-weight: 400;
+			font-size: 12px;
+		}
+
+		&.has-input {
+			margin-top: 0;
+			margin-bottom: 0;
+
+			&>.app-control {
+				height: calc(100% - 2px);
+
+				&>.number-box {
+					height: 100%;
+
+					&>input {
+						height: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	&.header-row {
+		&>span {
+			color: $activeM;
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+
+	&.footer-row {
+		button.secondary {
+			padding: 8px;
+			min-width: 0;
+		}
+	}
+
+	.profile-image {
+		max-width: 32px;
+		max-height: 32px;
+		border-radius: 50%;
+	}
+
+	.item-ct {
+		display: flex;
+		column-gap: 16px;
+		align-items: center;
+
+		.item-image {
+			&:not(.keep-aspect-ratio) {
+				width: 48px;
+			}
+
+			&.keep-aspect-ratio {
+				max-width: 48px;
+			}
+
+			height: 48px;
+		}
+	}
+
+	&:not(.header-row) {
+		i:not(.non-clickable) {
+			font-size: 24px;
+			cursor: pointer;
+		}
+
+		.app-control {
+			border: 0;
+
+			.checkbox-box {
+				padding: 0;
+			}
+
+			.checkbox-box,
+			.number-box,
+			input {
+				border: 0;
+
+				&[type="datetime-local"] {
+					border: 0;
+					border-bottom: 1px solid transparent;
+					outline: 0;
+					border-radius: 0;
+					padding: 0;
+					cursor: text;
+					width: 180px;
+
+					&:focus {
+						border-bottom-color: $focusM;
+					}
+				}
+			}
+
+			.number-box {
+				padding: 0;
+			}
+		}
+	}
+}
+
+.num-icon-pair-list {
+	display: flex;
+	column-gap: 4px;
+}
+
+.num-icon-pair {
+	font-size: 16px;
+
+	i {
+		margin-left: 2px;
+		font-size: 12px;
+	}
+}
+
+.row-details {
+	display: none;
+}
+
+.row-details-open {
+	.contains-row-details {
+		display: flex;
+		flex-direction: column;
+		margin-right: auto;
+
+		&>:first-child {
+			min-height: 48px;
+			justify-content: center;
+			margin-right: auto;
+		}
+	}
+
+	.row-details {
+		display: flex;
+		flex-direction: column;
+		font-size: 12px;
+	}
+}

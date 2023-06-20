@@ -1,0 +1,48 @@
+@import './_basic';
+
+.my-own-mode {
+	a {
+		color: var(--my-own-text-color);
+	}
+}
+
+a {
+	color: black;
+
+	&.primary {
+		color: $blueOfActiveIcon;
+	}
+
+	text-decoration: none;
+
+	&:hover {
+		color: $hoverMSolid;
+	}
+
+	&:focus {
+		color: $focusM;
+	}
+}
+
+a.basic-link {
+	font-size: 14px;
+	display: inline-block;
+	line-height: 16px;
+	font-weight: 700;
+	text-align: center;
+	min-width: 128px;
+	text-align: center;
+	padding: 10.67px 20px;
+	box-sizing: border-box;
+	border-radius: 8px;
+
+	&:hover {
+		color: white;
+		background: $hoverM;
+	}
+
+	&:focus {
+		color: white;
+		background: linear-gradient(136.61deg, $focusM-left 0%, $focusM 97.34%);
+	}
+}

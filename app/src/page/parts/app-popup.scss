@@ -1,0 +1,74 @@
+@import '../../css/basic';
+
+.app-popup {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0);
+	color: $activeM;
+	transition: background-color 200ms;
+	display: flex;
+
+	&>* {
+		margin: auto;
+	}
+
+	&.opened {
+		z-index: 1000;
+		background-color: rgba(0, 0, 0, .5);
+	}
+}
+
+.notice-popup-content {
+	background-color: #ffffff;
+	border-radius: $borderRadius;
+	box-sizing: border-box;
+	padding: 2em;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	position: relative;
+	overflow: auto;
+	max-width: calc(100vw - 4em);
+	max-height: calc(100vh - 4em);
+
+	.notice-img--any-resolution {
+		width: 128px;
+	}
+
+	@media (max-width: $mobile) {
+		padding: 1em;
+		margin: 1em;
+		max-width: calc(100vw - 2em);
+		max-height: calc(100vh - 2em);
+
+		.form-container {
+			width: auto;
+			max-width: calc(100vw - 2em);
+		}
+
+		.notice-img {
+			width: 96px;
+		}
+	}
+
+	.title-text {
+		margin: 16px 32px 0;
+	}
+
+	.notice-details {
+		font-size: 14px;
+		font-weight: 500;
+	}
+
+	.close-popup-x {
+		position: absolute;
+		cursor: pointer;
+		top: 8px;
+		right: 8px;
+	}
+}

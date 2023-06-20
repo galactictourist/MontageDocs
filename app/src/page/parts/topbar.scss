@@ -1,0 +1,120 @@
+@import '../../css/_basic';
+
+.dark-mode {
+	.app-header {
+		background-color: #000000;
+
+		i.topbar-icon {
+			color: #ffffff;
+
+			&:hover {
+				color: $hoverMSolid;
+			}
+
+			&:active {
+				color: $focusM;
+			}
+
+			&:disabled,
+			&[disabled] {
+				pointer-events: none;
+				color: $activeIconButtonM;
+			}
+		}
+	}
+}
+
+$marginLeft: 24px;
+$marginLeftMobile: 8px;
+
+.app-header {
+	box-shadow: 0px 3px 4px rgba(153, 155, 168, 0.25);
+	display: flex;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 3;
+	padding: 19px 32px;
+	background-color: white;
+	min-height: $topBarHeight;
+	box-sizing: border-box;
+
+	&>.topbar-icon {
+		margin-left: $marginLeft;
+
+		@media (max-width: $mobile) {
+			margin-left: $marginLeftMobile;
+		}
+	}
+
+	@media (max-width: $mobile) {
+		min-height: auto;
+		padding: 4px 8px;
+	}
+
+	.side-icon-set {
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		column-gap: 16px;
+
+		@media (max-width:$mobile) {
+			column-gap: $marginLeftMobile;
+		}
+	}
+
+	.state-icon {
+		$size: 28px;
+		width: $size;
+		height: $size;
+	}
+}
+
+.app-name {
+	margin-left: $marginLeft;
+
+	@media (max-width: $mobile) {
+		margin-left: $marginLeftMobile;
+	}
+
+	&>img {
+		height: 24px;
+		display: block;
+	}
+}
+
+.page-title {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: $marginLeft;
+	margin-left: $marginLeft;
+	text-transform: uppercase;
+
+	@media (max-width: $mobile) {
+		font-size: 12px;
+		line-height: 2*$marginLeftMobile;
+		margin-left: $marginLeftMobile;
+	}
+}
+
+.topbar-icon {
+	&.font-icon {
+		font-size: 26px;
+
+		@media (max-width: $mobile) {
+			font-size: 22px;
+		}
+	}
+
+	padding: 7px;
+	cursor: pointer;
+	color: $activeM;
+
+	&:hover {
+		color: $hoverM;
+	}
+
+	&:focus {
+		color: $focusM;
+	}
+}

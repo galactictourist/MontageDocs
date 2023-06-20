@@ -1,0 +1,12 @@
+.centered-prompt {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	&>* {
+		display: flex;
+		align-items: center;
+		column-gap: 16px;
+	}
+}

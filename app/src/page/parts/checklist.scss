@@ -1,0 +1,15 @@
+@import '../../css/_basic';
+
+.checklist {
+	font-size: 14px;
+	list-style-type: none;
+
+	li {
+		background-image: url('../../img/checklist/green-check-circle.svg');
+		background-repeat: no-repeat;
+		background-position-y: center;
+		padding-left: 24px;
+		margin-bottom: 16px;
+		line-height: 1.2;
+	}
+}

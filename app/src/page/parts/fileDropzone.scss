@@ -1,0 +1,149 @@
+@import '../../css/_basic.scss';
+
+.cropper-with-loader {
+	border-radius: $fieldBorderRadius;
+	position: relative;
+	margin-top: .5em;
+
+	.cropper-modal {
+		border-radius: $fieldBorderRadius;
+	}
+
+	.cropper-container img {
+		border-radius: $fieldBorderRadius;
+	}
+}
+
+.cropper-loader-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	border: 1px dashed $fieldBorderColor;
+	border-radius: $fieldBorderRadius;
+
+	.spinner {
+		margin: auto;
+	}
+}
+
+.thumbs-container {
+	display: flex;
+	margin-top: 8px;
+	padding-left: 8px;
+	padding-top: 8px;
+	background-color: white;
+	border-radius: $fieldBorderRadius;
+	border: 1px solid $fieldBorderColor;
+
+	.spinner {
+		margin: auto auto .5em;
+	}
+}
+
+.thumb {
+	display: inline-flex;
+	justify-content: center;
+	margin-bottom: 8px;
+	margin-right: 8px;
+	width: 100%;
+	height: 100px;
+	padding: 4px;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.thumb-inner {
+	display: flex;
+	min-width: 0;
+	overflow: hidden;
+
+	img {
+		display: block;
+		max-height: 100%;
+		max-width: 100%;
+		width: 100%;
+		margin: auto;
+	}
+}
+
+.dropzone {
+	background-color: white;
+	cursor: pointer;
+	border: 1px dashed $fieldBorderColor;
+	border-radius: $fieldBorderRadius;
+	position: relative;
+
+	progress {
+		position: absolute;
+		bottom: 8px;
+		left: 16px;
+		height: 4px;
+		right: 16px;
+		width: calc(100% - 32px);
+	}
+
+	&:hover {
+		border-color: $hoverM;
+	}
+
+	&:focus {
+		outline-color: $focusM;
+	}
+
+	&:disabled,
+	&[disabled] {
+		pointer-events: none;
+		border-color: $footerLinkDisabled;
+	}
+}
+
+.drop-prompt {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 16px;
+	padding: 24px 8px;
+
+	.main-prompt {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	i {
+		color: $footerLinkDisabled;
+		font-size: 32px;
+	}
+}
+
+.file-op-buttons-ct {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	column-gap: 8px;
+}
+
+.file-op-button {
+	font-size: 24px;
+	cursor: pointer;
+
+	&:hover {
+		color: $hoverM;
+	}
+
+	&:focus {
+		color: $focusM;
+	}
+
+	&:disabled,
+	&[disabled] {
+		pointer-events: none;
+		color: $footerLinkDisabled;
+	}
+}

@@ -1,0 +1,40 @@
+@import '../css/_basic';
+
+.dark-mode {
+
+	[class^=icon-],
+	[class*=" icon-"] {
+		color: #ffffff;
+	}
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	color: $activeIconButtonM;
+}
+
+.font-icon {
+	font-size: 32px;
+
+	&:hover {
+		color: $hoverMSolid;
+	}
+
+	&:active {
+		color: $focusM-left;
+	}
+}
+
+.colorfull-twitter {
+	.icon-twitter {
+		color: #00BEE4;
+
+		&:hover {
+			color: $hoverMSolid;
+		}
+
+		&:active {
+			color: $focusM-left;
+		}
+	}
+}

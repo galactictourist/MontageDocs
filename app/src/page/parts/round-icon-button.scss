@@ -1,0 +1,58 @@
+@import '../../css/_basic';
+
+.my-own-mode {
+	.round-icon-button {
+		background-color: var(--my-own-bg-color);
+		color: var(--my-own-text-color);
+	}
+}
+
+.round-icon-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: 1px solid $roundIconButtonColor;
+	font-size: 12px;
+	line-height: 16px;
+	cursor: pointer;
+	box-sizing: border-box;
+	background-color: white;
+
+	&:hover {
+		border-color: $hoverMSolid;
+		color: $hoverMSolid;
+
+		&>i {
+			color: $hoverMSolid;
+		}
+	}
+
+	&:active {
+		border-color: $focusM-left;
+		color: $focusM-left;
+
+		&>i {
+			color: $focusM-left;
+		}
+	}
+
+	&:disabled,
+	&[disabled] {
+		pointer-events: none;
+		border-color: $disabledIconM;
+		color: $disabledIconM;
+		outline: 0;
+
+		&>i {
+			color: $disabledIconM;
+			outline: 0;
+		}
+	}
+
+	&>i {
+		font-size: 16px;
+	}
+}

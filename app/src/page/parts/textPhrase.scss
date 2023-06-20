@@ -1,0 +1,62 @@
+.even-smaller-text {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 21px;
+}
+
+.field-text {
+	&.fw-700 {
+		font-weight: 700;
+	}
+
+	&.fw-400 {
+		font-weight: 400;
+	}
+
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 2;
+}
+
+.sub-title-text {
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 1.25;
+}
+
+.title-text {
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 1.333;
+}
+
+.main-text {
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 2;
+
+	&.fw-400 {
+		font-weight: 400;
+	}
+}
+
+.secondary-text {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 2;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+
+	&.fw-400 {
+		font-weight: 400;
+	}
+
+	&.fw-600 {
+		font-weight: 600;
+	}
+
+	&.fw-700 {
+		font-weight: 700;
+	}
+}

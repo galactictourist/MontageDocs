@@ -1,0 +1,52 @@
+﻿@import '../../css/_basic';
+
+@mixin toggle() {
+	background-color: white;
+	border: 1px solid $fieldBorderColor;
+	border-radius: $borderRadius;
+
+	.toggle {
+		cursor: pointer;
+		display: block;
+		position: relative;
+		width: 40px;
+		height: 22px;
+		border-radius: 12px;
+		background-color: black;
+	}
+
+	.toggle::before {
+		content: '';
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		top: 3px;
+		left: 3px;
+		background-color: white;
+		border-radius: 100%;
+	}
+
+	input {
+		display: none;
+
+		&:checked+.toggle {
+			background: $chosenM;
+
+			&::before {
+				left: 20px;
+			}
+		}
+	}
+
+	.toggle-title {
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 21px;
+		margin: auto auto auto 0;
+
+		&.unchecked {
+			font-weight: 400;
+		}
+	}
+}

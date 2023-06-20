@@ -1,0 +1,22 @@
+@import '../../css/_basic.scss';
+
+.sidebar-link {
+
+	&.selected,
+	&:hover {
+		.beta {
+			color: white;
+		}
+	}
+}
+
+.beta {
+	color: $noM;
+	font-size: 8px;
+	font-weight: 500;
+	line-height: 16px;
+	font-style: italic;
+	position: relative;
+	top: -4px;
+	left: 8px;
+}

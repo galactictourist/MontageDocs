@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: Montserrat, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#w3a-modal {
+  z-index: 10;
+}

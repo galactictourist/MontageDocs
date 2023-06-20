@@ -1,0 +1,56 @@
+const { expect } = require("chai");
+const { ethers } = require("hardhat");
+
+const baseContractPath = "./src/backend/contracts/manyArtists/evolving/";
+const montageAddress = "0xE4068ba8805e307f0bC129ddE8c0E25A46AE583f";
+
+describe("Deploy Test", function () {
+	it("tests artist sale claim via signature", async function () {
+		const accounts = await ethers.getSigners();
+
+		const BUFFER = await ethers.getContractFactory(baseContractPath + "splitter/Buffer.sol:Buffer");
+		let buffer = await BUFFER.deploy()
+		await buffer.deployed()
+		await buffer.initialize(accounts[0].address)
+
+		/**
+		 * uint256[] calldata values,
+		address[] calldata coreTeamAddresses,
+		uint256[] calldata c_teamPercs
+		 */
+		const tx = accounts[10].sendTransaction({
+			to: buffer.address,
+			value: ethers.utils.parseUnits("2.0", "ether"),
+		});
+		console.log(await buffer.sales())
+		let team = [accounts[0].address, accounts[1].address, accounts[2].address, accounts[3].address]
+		await buffer.setPercentsAndAddCoreTeam([1000, 4000, 2500, 2000, 500, 1000, 4000, 2500, 2000, 500], team, [2500, 2500, 2500, 2500])
+		const pay = await ethers.utils.parseUnits("0.01", "ether");
+		await buffer.setSigner(accounts[0].address)
+		let hash = await buffer.hashPayoutMessage(pay, accounts[5].address)
+		let sig = accounts[0].signMessage(ethers.utils.arrayify(hash))
+		await buffer.connect(accounts[4]).artistSaleClaim(pay, accounts[5].address, sig)
+		await buffer.connect(accounts[4]).artistSaleClaim(pay, accounts[5].address, sig)
+		let badsig = accounts[2].signMessage(ethers.utils.arrayify(hash))
+		let badsig2 = accounts[2].signMessage(ethers.utils.arrayify(hash))
+	})
+	it("tests nft mint and buffer integration", async function () {
+		const accounts = await ethers.getSigners();
+		const artists = [accounts[2].address, accounts[3].address, accounts[4].address, accounts[5].address]
+		const BUFFER = await ethers.getContractFactory(baseContractPath + "splitter/Buffer.sol:Buffer");
+		const NFT = await ethers.getContractFactory(baseContractPath + "nft/NFTcontract.sol:NFTcontract")
+		let buffer = await BUFFER.deploy()
+		let nft = await NFT.deploy()
+		await buffer.deployed()
+		await buffer.initialize(accounts[0].address)
+		await nft.initialize(buffer.address,
+			accounts[0].address,
+			"test",
+			"ts",
+			1000)
+		await nft.addArtists(artists)
+		for (let i = 0; i < artists.length; i++) {
+			expect(await nft.isArtist(artists[i])).to.equal(true)
+		}
+	})
+})

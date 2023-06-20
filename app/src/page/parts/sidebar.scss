@@ -1,0 +1,99 @@
+@import '../../css/_basic';
+
+.sidebar {
+	z-index: 2;
+	padding: 16px 0;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background-color: white;
+	$sidebarWidth: 216px;
+	min-width: $sidebarWidth;
+	width: $sidebarWidth;
+	row-gap: 8px;
+	$topBarHeight: 84px;
+	height: calc(100vh - $topBarHeight);
+	top: $topBarHeight;
+
+	@media (max-width: $mobile) {
+		$topBarHeightMobile: 44px;
+		height: calc(100vh - $topBarHeightMobile);
+		top: $topBarHeightMobile;
+	}
+
+	position: sticky;
+	box-sizing: border-box;
+	margin-left: 0;
+	transition: margin-left 300ms ease-in-out,
+	filter 300ms ease-in-out;
+	filter: drop-shadow(50px 0px 20px rgba(0, 0, 0, 0.01)) drop-shadow(28px 0px 17px rgba(0, 0, 0, 0.05)) drop-shadow(13px 0px 13px rgba(0, 0, 0, 0.09)) drop-shadow(3px 0px 7px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+
+	&.closed,
+	&.changing {
+		margin-left: -$sidebarWidth;
+		filter: none;
+	}
+}
+
+.sidebar-splitter {
+	border-top: 2px solid $splitterColor;
+	width: 100%;
+}
+
+.sidebar-link {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 8px 8px 8px 12px;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 500;
+	color: $activeM;
+	width: calc(100% - 17px);
+	margin: 0 8px;
+	border-radius: $borderRadius;
+	box-sizing: border-box;
+	text-transform: uppercase;
+
+	&>i {
+		display: none;
+		font-size: 14px;
+		color: $footerLinkDisabled;
+		margin-right: 8px;
+	}
+
+	&:hover {
+		background: $hoverM;
+		color: white;
+		filter: drop-shadow(0px 15px 6px rgba(0, 0, 0, 0.01)) drop-shadow(0px 8px 5px rgba(0, 0, 0, 0.05)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.09)) drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+
+		&>i {
+			color: white;
+		}
+	}
+
+	&:active,
+	&:focus,
+	&.selected {
+		background: $chosenM;
+		color: white;
+		box-shadow: inset 0px 6px 3px rgba(0, 0, 0, 0.01), inset 0px 4px 2px rgba(0, 0, 0, 0.05), inset 0px 2px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 1px rgba(0, 0, 0, 0.1);
+
+		&:hover {
+			filter: none;
+		}
+
+		&>i {
+			color: white;
+		}
+	}
+
+	&:disabled,
+	&[disabled] {
+		pointer-events: none;
+		color: $footerLinkDisabled;
+		background-color: transparent;
+	}
+}

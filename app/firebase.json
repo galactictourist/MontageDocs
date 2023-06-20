@@ -1,0 +1,126 @@
+{
+  "functions": {
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log"
+    ],
+    "source": "functions"
+  },
+  "hosting": [
+    {
+      "target": "main",
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/artis",
+          "destination": "/collection-page/3",
+          "type": 301
+        },
+        {
+          "source": "/artis/about",
+          "destination": "/collection-page/3/about",
+          "type": 301
+        },
+        {
+          "source": "/artis/mint",
+          "destination": "/collection-page/3/mint",
+          "type": 301
+        },
+        {
+          "source": "/ArtIs",
+          "destination": "/collection-page/3",
+          "type": 301
+        },
+        {
+          "source": "/ArtIs/about",
+          "destination": "/collection-page/3/about",
+          "type": 301
+        },
+        {
+          "source": "/ArtIs/mint",
+          "destination": "/collection-page/3/mint",
+          "type": 301
+        }
+      ]
+    },
+    {
+      "target": "prod",
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/artis",
+          "destination": "/collection-page/3",
+          "type": 301
+        },
+        {
+          "source": "/artis/about",
+          "destination": "/collection-page/3/about",
+          "type": 301
+        },
+        {
+          "source": "/artis/mint",
+          "destination": "/collection-page/3/mint",
+          "type": 301
+        },
+        {
+          "source": "/ArtIs",
+          "destination": "/collection-page/3",
+          "type": 301
+        },
+        {
+          "source": "/ArtIs/about",
+          "destination": "/collection-page/3/about",
+          "type": 301
+        },
+        {
+          "source": "/ArtIs/mint",
+          "destination": "/collection-page/3/mint",
+          "type": 301
+        }
+      ]
+    }
+  ],
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    }
+  },
+  "extensions": {
+    "moralis-streams": "moralis/moralis-streams@0.1.11",
+    "moralis-streams-prod": "moralis/moralis-streams@0.1.11"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

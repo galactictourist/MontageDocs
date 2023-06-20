@@ -1,0 +1,77 @@
+@import './_basic';
+
+.my-own-mode {
+	.fab-button {
+		background-color: var(--my-own-bg-color);
+
+		&:hover {
+			&>i {
+				color: var(--my-own-text-color);
+
+				&:hover {
+					color: var(--my-own-text-color);
+				}
+			}
+		}
+	}
+}
+
+.fab-button {
+	background-color: white;
+
+	&:disabled,
+	&[disabled] {
+		opacity: .6;
+		pointer-events: none;
+		background-color: $disabledIconM;
+	}
+
+	&.primary {
+		background-color: $appleBlue;
+
+		&>i {
+			color: white;
+		}
+	}
+
+	&.smaller {
+		width: 38px;
+		height: 38px;
+	}
+
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: 1px solid $fieldBorderColor;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+	&>i {
+		color: black;
+	}
+
+	&:hover {
+		background: $hoverM;
+
+		&>i {
+			color: white;
+		}
+
+		filter: drop-shadow(0px 15px 6px rgba(0, 0, 0, 0.01)) drop-shadow(0px 8px 5px rgba(0, 0, 0, 0.05)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.09)) drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+	}
+
+	&:active {
+		background: $focusM;
+
+		&>i {
+			color: white;
+		}
+
+		box-shadow: inset 0px 6px 3px rgba(0, 0, 0, 0.01),
+		inset 0px 4px 2px rgba(0, 0, 0, 0.05),
+		inset 0px 2px 2px rgba(0, 0, 0, 0.09),
+		inset 0px 0px 1px rgba(0, 0, 0, 0.1);
+	}
+}

@@ -1,0 +1,32 @@
+@import './_basic.scss';
+
+progress {
+	-webkit-appearance: none;
+	margin-top: 4px;
+
+	&::-webkit-progress-bar {
+		border-radius: $borderRadius;
+		background-color: $waitingColor;
+	}
+
+	&::-webkit-progress-value {
+		border-radius: $borderRadius;
+		background: $chosenM;
+	}
+
+	&.ok-green-style {
+		height: 4px;
+		width: auto;
+
+		&::-webkit-progress-bar {
+			border-radius: 0;
+			background-color: $footerLinkDisabled;
+		}
+
+		&::-webkit-progress-value {
+			border-radius: 0;
+			background-image: none;
+			background-color: $yesM;
+		}
+	}
+}

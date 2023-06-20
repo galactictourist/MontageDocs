@@ -1,0 +1,56 @@
+.item-status-on-card {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 16px;
+	padding: 4px 24px;
+}
+
+.my-own-mode {
+	.item-card-overlay {
+		background-color: transparent;
+	}
+}
+
+.item-card-overlay {
+	position: absolute;
+	bottom: 8px;
+	left: 12px;
+	right: 12px;
+	text-transform: none;
+	opacity: 0;
+	display: flex;
+	column-gap: 16px;
+	align-items: center;
+	background-color: white;
+
+	&.top-left {
+		bottom: auto;
+		right: auto;
+		top: 13px;
+		border-radius: 8px 0 8px 0;
+	}
+
+	&.always-visible {
+		opacity: 1;
+	}
+
+	&.bg-dark {
+		background-color: rgba(51, 51, 51, 0.8);
+		color: white;
+	}
+
+	&>* {
+		flex: 1;
+		min-width: auto !important;
+	}
+}
+
+.card {
+	position: relative;
+
+	&:hover {
+		.item-card-overlay {
+			opacity: 1;
+		}
+	}
+}

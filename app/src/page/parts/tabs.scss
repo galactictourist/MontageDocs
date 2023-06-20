@@ -1,0 +1,144 @@
+@import '../../css/_basic';
+
+.tab-buttons {
+	padding-top: 32px;
+	display: grid;
+	$tabButtonWidth: 200px;
+	border-bottom: 4px solid $footerLinkDisabled;
+	grid-template-columns: repeat(auto-fit, $tabButtonWidth);
+	column-gap: 4px;
+
+	&.pie-tab-buttons {
+		padding-top: 32px;
+	}
+}
+
+.my-own-mode {
+	.tab-button {
+		color: var(--my-own-text-color);
+	}
+}
+
+.tab-button {
+	font-size: 14px;
+	padding: 8px 4px;
+	box-sizing: border-box;
+	cursor: pointer;
+	text-transform: uppercase;
+	text-align: center;
+	position: relative;
+
+	.selection-marker {
+		display: block;
+		height: 4px;
+		background: transparent;
+		width: 100%;
+		bottom: -4px;
+		left: 0;
+		position: absolute;
+	}
+
+	&:hover {
+		.selection-marker {
+			background: $hoverM;
+		}
+	}
+
+	&:disabled,
+	&[disabled] {
+		pointer-events: none;
+		color: $footerLinkDisabled;
+	}
+
+	&.selected {
+		font-weight: 700;
+		background: linear-gradient(90deg, #EB2C9C -0.02%, #7226EF 100.02%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-fill-color: transparent;
+
+		.selection-marker {
+			background: $chosenM;
+		}
+	}
+}
+
+.tab-body {
+	display: flex;
+}
+
+.tab-content {
+	background-color: $lightGraybgM;
+	width: 100%;
+
+	position: relative;
+
+	&:not(.no-gradient) {
+		&::after {
+			content: '';
+			background: linear-gradient(0.01deg, #FFA6A6 0%, #DB02E9 15.1%, #AF0AEB 30.73%, #730DF2 45.83%, #0C0BE5 61.98%, #10A4FE 80.73%, #00BEE4 100%);
+			display: block;
+			width: 16px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	.cards-fluid-grid {
+		padding: 2em 0;
+	}
+}
+
+.tab-sidebar {
+	&:empty {
+		display: none;
+	}
+
+	.sidebar {
+		filter: none;
+		position: static;
+		width: auto;
+		min-width: auto;
+	}
+
+	.sidebar-link {
+		cursor: pointer;
+		text-transform: none;
+		align-items: stretch;
+
+		&>i {
+			display: inline;
+		}
+	}
+
+	width: $tabSidebarWidth;
+	border-right: 1px solid $separatorColor;
+	padding: 1em;
+	box-sizing: border-box;
+
+	.form-container {
+		max-width: 100%;
+	}
+
+	&>.form-container>.app-control.app-control-checkbox>.checkbox-box .toggle-title,
+	.filter-label {
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	.filter-label {
+		padding-bottom: .5em;
+	}
+
+	.app-control {
+		border: 0;
+
+		.checkbox-box {
+			padding: 0;
+			border: 0;
+		}
+	}
+}

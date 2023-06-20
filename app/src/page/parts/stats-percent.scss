@@ -1,0 +1,14 @@
+@import '../../css/_basic';
+
+.percent {
+
+	font-weight: 700;
+
+	&.positive {
+		color: $yesM;
+	}
+
+	&.negative {
+		color: $noM;
+	}
+}

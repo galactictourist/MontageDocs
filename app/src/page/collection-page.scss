@@ -1,0 +1,133 @@
+@import '../css/_basic';
+
+.collection-page {
+	max-width: $pageWidth;
+}
+
+.image-text-block {
+	display: flex;
+	align-items: center;
+
+	&.is-column {
+		flex-direction: column;
+		row-gap: 4em;
+
+		&.reverse {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&.has-single-element {
+		justify-content: center;
+	}
+
+	&.ai-fs {
+		align-items: flex-start;
+	}
+
+	padding: 4em 0;
+
+	&>div {
+		flex: 1;
+
+		&.is-single {
+			flex: .5;
+		}
+
+		padding: 0 4em;
+
+		@media (max-width: $mobile) {
+			padding: 0 1em;
+		}
+	}
+
+	&.reverse {
+		flex-direction: row-reverse;
+	}
+
+	@media (max-width: $mobile) {
+		flex-direction: column;
+		row-gap: 2em;
+		padding: 2em 0;
+	}
+}
+
+.image-text-block--title {
+	font-size: 40px;
+	font-weight: 500;
+	line-height: 70px;
+	background-image: linear-gradient(90deg, rgba(255, 166, 166, 1) 14%, rgba(115, 13, 242, 1) 28%, rgba(175, 10, 235, 1) 42%, rgba(115, 13, 242, 1) 56%, rgba(12, 11, 229, 1) 70%, rgba(16, 164, 254, 1) 84%, rgba(0, 190, 228, 1) 98%);
+	background-repeat: repeat-x;
+	background-size: 100% 4px;
+	background-position-y: 100%;
+	display: inline-block;
+	margin-bottom: 16px;
+}
+
+.image-text-block--desc {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 27px;
+	white-space: pre-line;
+}
+
+.image-text-block--img {
+	max-width: 100%;
+	width: 453px;
+	display: block;
+	margin: auto;
+
+	&.semi-transparent {
+		opacity: .6;
+	}
+}
+
+.bg-block {
+	&:nth-child(2n+1) {
+		background-color: $altLightGraybgM;
+	}
+}
+
+.dark-mode {
+	color: white;
+	background-color: $altDarkModeBgM;
+
+	.bg-block {
+		background-color: $darkModeBgM;
+
+		&:nth-child(2n+1) {
+			background-color: $altDarkModeBgM;
+		}
+	}
+
+	.card {
+		background-color: $altDarkModeBgM;
+	}
+
+	.card-main-title {
+		color: rgba(255, 255, 255, .7);
+	}
+
+	.card-img {
+		background-color: rgba(255, 255, 255, .7);
+	}
+
+	.card-footer-sub-line,
+	a {
+		color: rgba(255, 255, 255, .5);
+	}
+
+	.sticky-button-ct {
+		background-color: rgba(0, 0, 0, .5);
+	}
+}
+
+.slick-slide img {
+	margin: auto;
+}
+
+.my-own-mode {
+	.tab-content {
+		background-color: transparent;
+	}
+}

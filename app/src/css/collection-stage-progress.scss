@@ -1,0 +1,31 @@
+@import './_basic.scss';
+
+.collection-progressbar-bar {
+	width: 180px;
+
+	@media (max-width: $mobile) {
+		display: none;
+	}
+}
+
+.collection-stage-progress {
+	display: flex;
+	column-gap: 8px;
+	align-items: center;
+	padding: 8px 16px;
+
+	&:first-child {
+		padding-top: 16px;
+	}
+
+	&:last-child {
+		padding-bottom: 16px;
+	}
+
+	&>span {
+		white-space: nowrap;
+		font-size: 12px;
+		line-height: 14px;
+		font-weight: 500;
+	}
+}

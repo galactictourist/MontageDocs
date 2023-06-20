@@ -1,0 +1,63 @@
+.state-icon {
+	display: block;
+	height: 40px;
+	width: 40px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	cursor: pointer;
+
+	&[disabled] {
+		pointer-events: none;
+	}
+
+	&[data-type="montage"] {
+		background-image: url('./montage/active.svg');
+
+		&:hover {
+			background-image: url('./montage/hover.svg');
+		}
+
+		&:active {
+			background-image: url('./montage/focus.svg');
+		}
+	}
+
+	&[data-type="heart"] {
+		background-image: url('./heart/active.svg');
+
+		&:hover {
+			background-image: url('./heart/hover.svg');
+		}
+
+		&:active,
+		&.selected {
+			background-image: url('./heart/focus.svg');
+		}
+
+		&[disabled] {
+			background-image: url('./heart/disabled.svg');
+		}
+	}
+}
+
+.card {
+	.state-icon {
+		&[data-type="heart"] {
+			background-image: url('./heart/active-oncard.svg');
+
+			&:hover {
+				background-image: url('./heart/hover.svg');
+			}
+
+			&:active,
+			&.selected {
+				background-image: url('./heart/focus.svg');
+			}
+
+			&[disabled] {
+				background-image: url('./heart/disabled.svg');
+			}
+		}
+	}
+}

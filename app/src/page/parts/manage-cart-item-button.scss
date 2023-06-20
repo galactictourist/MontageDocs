@@ -1,0 +1,43 @@
+.manage-cart-item-button {
+	img {
+		position: absolute;
+		top: 14px;
+		right: 16px;
+	}
+
+	.add-to-cart,
+	.in-cart,
+	.remove-from-cart {
+		opacity: 0;
+	}
+
+	&.is-in-cart {
+		.in-cart {
+			opacity: 1;
+		}
+	}
+}
+
+.card {
+	position: relative;
+
+	&:hover {
+		.manage-cart-item-button {
+			.add-to-cart {
+				opacity: 1;
+			}
+
+			&.is-in-cart {
+
+				.add-to-cart,
+				.in-cart {
+					opacity: 0;
+				}
+
+				.remove-from-cart {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
